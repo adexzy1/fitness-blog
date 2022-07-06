@@ -1,0 +1,44 @@
+.navlink {
+  list-style: none;
+}
+
+.navlink > a {
+  display: block;
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 2rem 0 0 2rem;
+  position: relative;
+}
+
+.active__link > a {
+  background-color: var(--background-color);
+}
+
+@media screen and (min-width: 768px) {
+  .navlink > a {
+    padding: 0;
+    margin: 0;
+    transition: all ease 0.2s;
+    border-radius: 0;
+  }
+
+  .navlink > a::before {
+    transform: scaleX(0);
+  }
+
+  .navlink > a:before,
+  .active__link > a::after {
+    content: '';
+    position: absolute;
+    background-color: var(--accent-color);
+    left: 0;
+    right: 0;
+    height: 0.3rem;
+    bottom: -0.5rem;
+    transition: all ease 0.3s;
+  }
+
+  .navlink > a:hover::before {
+    transform: scaleX(1);
+  }
+}

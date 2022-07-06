@@ -1,0 +1,46 @@
+.small__featured__wrapper p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  padding-top: 1rem;
+  color: var(--primary-text);
+}
+
+.small__featured__container {
+  margin-top: 5rem;
+}
+
+.small__featured__wrapper {
+  background-color: rgba(51, 47, 60, 1);
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  color: var(--secondary-text);
+}
+
+.small__featured__wrapper h3 {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 3rem;
+  padding-bottom: 1.5rem;
+}
+
+.small__featured__wrapper div {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.small__featured__wrapper svg {
+  background-color: var(--accent-color);
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0.7rem;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 1100px) {
+  .small__featured__wrapper {
+    margin: 0;
+  }
+}

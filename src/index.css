@@ -8,11 +8,11 @@
 
 :root {
   --background-color: #1f1c26;
-  --button-bg-color: #f24b88;
+  --accent-color: #f24b88;
   --accent: #59253e;
   --secondary-text: #ffff;
-  --primary-text: rgba(255, 255, 255, 0.35);
-  --outer-Padding: 5%;
+  --primary-text: rgba(255, 255, 255, 0.36);
+  --outter-padding: 5%;
 }
 
 html {
@@ -24,6 +24,7 @@ body {
   font-size: 1.6rem;
   background-color: var(--background-color);
   color: var(--primary-text);
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -31,8 +32,22 @@ a {
   color: inherit;
 }
 
+button {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .App {
   width: 144rem;
   max-width: 100%;
   margin-inline: auto;
+}
+
+/* media queries */
+@media screen and (min-width: 1200px) {
+  :root {
+    --outter-padding: 10%;
+  }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './Navbar';
+import Navbar from './navbar/Navbar';
 import style from './header.module.css';
 import logo from '../../assets/logo.png';
 
