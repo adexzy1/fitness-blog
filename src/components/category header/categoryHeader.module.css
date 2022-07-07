@@ -1,0 +1,62 @@
+.container {
+  color: var(--secondary-text);
+  padding-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.container > h2 {
+  text-align: center;
+  font-size: clamp(2.6rem, 3vw, 3rem);
+  position: relative;
+}
+
+.container > h2::after {
+  content: '';
+  position: absolute;
+  background-color: var(--accent);
+  height: 0.4rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.container > p {
+  display: none;
+}
+
+@media screen and (min-width: 850px) {
+  .container {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .container > p {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 300;
+    cursor: pointer;
+    position: relative;
+    padding: 0.5rem 1rem;
+  }
+
+  .container > p::after {
+    content: '';
+    background-color: var(--accent);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 0.5rem;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+
+  .container > p:hover::after {
+    transform: scaleX(1);
+  }
+}

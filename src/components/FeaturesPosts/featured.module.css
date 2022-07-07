@@ -8,7 +8,7 @@
 
 /* media queries */
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 768px) {
   .small__featured__container {
     margin-top: 10rem;
     display: flex;
