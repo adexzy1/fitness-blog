@@ -1,7 +1,6 @@
 .container {
   background-color: var(--secondary-text);
   color: rgba(13, 13, 13, 1);
-  /* height: 40.4rem; */
 }
 
 .img__wrapper > img {
@@ -10,8 +9,6 @@
 }
 
 .details__container {
-  display: flex;
-  flex-direction: column;
   padding: 1.5rem;
 }
 
@@ -27,9 +24,13 @@
   line-height: 1.8rem;
 }
 
-.details__container button {
+.details__container > button {
   margin-top: 5rem;
   margin-left: auto;
   padding: 1.3rem 1.5rem;
   border-radius: 0.5rem;
+}
+
+.details__container > button::after {
+  z-index: 1;
 }

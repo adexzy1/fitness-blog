@@ -11,11 +11,13 @@ const EditorsPickCard = () => {
 
       <div className={style.details__container}>
         <h5>THE BEST FOODS TO REFUEL WITH AFTER A HIIT WORKOUT</h5>
+
         <p>
           With benefits such as weight loss, improved stamina and endurance, and
           stronger muscles, it&apos;s no surprise that HIIT workouts are so in
           demand.
         </p>
+
         <Button text="Read More" />
       </div>
     </section>
