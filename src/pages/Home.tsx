@@ -1,12 +1,13 @@
-import React from 'react';
+import EditorsPickList from '../components/editorsPick/EditorsPickList';
 import FeaturedPosts from '../components/FeaturesPosts/FeaturedPosts';
-import LatestPostList from '../components/latest posts/LatestPostList';
+import LatestPostList from '../components/latestPosts/LatestPostList';
 
 const Home = () => {
   return (
     <section>
       <FeaturedPosts />
       <LatestPostList />
+      <EditorsPickList />
     </section>
   );
 };

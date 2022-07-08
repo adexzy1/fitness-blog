@@ -1,5 +1,5 @@
 import CategoryHeader from '../category header/CategoryHeader';
-import PostCard from '../Post Card/PostCard';
+import PostCard from '../PostCard/PostCard';
 import style from './latestPostList.module.css';
 
 const LatestPostList = () => {

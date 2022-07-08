@@ -1,0 +1,27 @@
+.button {
+  position: relative;
+  background-color: var(--accent-color);
+  color: var(--secondary-text);
+  text-transform: uppercase;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  border: 0.3rem solid var(--accent-color);
+  border-radius: 1rem;
+  transition: top, right, left, bottom, 0.3s ease-in-out;
+}
+
+.button:hover::after,
+.button:focus::after {
+  top: calc(0.25rem * -3);
+  left: calc(0.25rem * -3);
+  right: calc(0.25rem * -3);
+  bottom: calc(0.25rem * -3);
+}
