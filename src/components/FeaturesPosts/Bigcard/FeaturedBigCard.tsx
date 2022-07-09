@@ -1,6 +1,6 @@
 import Button from '../../button/Button';
-import style from './featuredBigCard.module.css';
 import featured from '../../../assets/featured.png';
+import style from './featuredBigCard.module.css';
 
 const FeaturedBigCard = () => {
   return (

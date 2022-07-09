@@ -1,10 +1,10 @@
 import logo from '../../assets/logo.png';
-import style from './footer.module.css';
 import { GrFacebookOption } from 'react-icons/gr';
 import { BsTwitter } from 'react-icons/bs';
 import { FaWhatsapp } from 'react-icons/fa';
 import { BsInstagram } from 'react-icons/bs';
 import NavItem from '../Header/navItem/NavItem';
+import style from './footer.module.css';
 
 const Footer = () => {
   return (

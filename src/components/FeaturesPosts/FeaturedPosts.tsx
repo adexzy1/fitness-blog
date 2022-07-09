@@ -1,6 +1,6 @@
 import FeaturedSmallCard from './smallCard/FeaturedSmallCard';
-import style from './featured.module.css';
 import FeaturedBigCard from './Bigcard/FeaturedBigCard';
+import style from './featured.module.css';
 
 const FeaturedPosts = () => {
   return (

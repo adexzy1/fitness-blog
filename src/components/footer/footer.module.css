@@ -58,9 +58,10 @@
 }
 
 .footer__quick_links a {
-  margin-bottom: 2rem;
-  padding: 0;
   transition: color 0.3s ease-in-out;
+  padding: 0;
+  margin-bottom: 2rem;
+  border-radius: 0;
 }
 
 .footer__quick_links a:hover {
@@ -82,7 +83,7 @@
     flex-direction: row;
     text-align: initial;
     justify-content: space-between;
-    align-self: flex-start;
+    align-items: flex-start;
   }
 
   .logo__container {
@@ -100,6 +101,6 @@
 
   .footer__quick_links a::after,
   .footer__quick_links a::before {
-    all: unset;
+    display: none;
   }
 }

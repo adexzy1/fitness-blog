@@ -1,5 +1,5 @@
-import style from './featuredSmallCard.module.css';
 import { CgArrowTopRight } from 'react-icons/cg';
+import style from './featuredSmallCard.module.css';
 
 const FeaturedSmallCard = () => {
   return (

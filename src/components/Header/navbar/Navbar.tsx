@@ -1,7 +1,7 @@
 import NavItem from '../navItem/NavItem';
-import style from './navbar.module.css';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { useState } from 'react';
+import style from './navbar.module.css';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
