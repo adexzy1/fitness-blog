@@ -1,0 +1,9 @@
+.comment__container {
+  margin-top: 5rem;
+}
+
+.comment__container > h5 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: var(--secondary-text);
+}

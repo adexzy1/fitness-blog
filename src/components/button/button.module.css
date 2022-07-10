@@ -25,3 +25,13 @@
   right: calc(0.25rem * -3);
   bottom: calc(0.25rem * -3);
 }
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:disabled::after,
+.button:disabled::before {
+  display: none;
+}

@@ -1,0 +1,38 @@
+.commentBox__container {
+  margin-top: 2rem;
+}
+
+.commentBox__container > input,
+.commentBox__container > textarea {
+  border: 0.1rem solid rgba(51, 47, 60, 1);
+  background-color: transparent;
+  padding: 1.5rem;
+  outline: none;
+  width: 100%;
+  border-radius: 1rem;
+  color: var(--secondary-text);
+}
+
+.commentBox__container > input {
+  margin-bottom: 3rem;
+}
+
+.commentBox__container > textarea:focus,
+.commentBox__container > input:focus {
+  border: 0.1rem solid var(--accent-color);
+}
+
+.commentBox__container > button {
+  padding: 1.5rem 2.5rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.cancel__Btn {
+  text-transform: uppercase;
+  transition: color ease-in-out 0.3s;
+}
+
+.cancel__Btn:hover {
+  color: var(--secondary-text);
+}
