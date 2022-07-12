@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
-import Fiteness from '../pages/fitness/Fiteness';
+import Fiteness from '../pages/categories/fitness/Fiteness';
+import KetoDiet from '../pages/categories/keto-diet/KetoDiet';
+import Nutrition from '../pages/categories/nutrition/Nutrition';
 import Home from '../pages/Home/Home';
-import KetoDiet from '../pages/keto-diet/KetoDiet';
-import Nutrition from '../pages/nutrition/Nutrition';
 import SinglePostPage from '../pages/Sinple-post/SinglePostPage';
 
 const PageRoutes = () => {

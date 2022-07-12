@@ -1,6 +1,6 @@
-import BlogList from '../../components/Blog-list/BlogList';
-import RelatedPosts from '../../components/RelatedPosts/RelatedPosts';
-import style from './ketoDiet.module.css';
+import BlogList from '../../../components/Blog-list/BlogList';
+import RelatedPosts from '../../../components/RelatedPosts/RelatedPosts';
+import style from '../categories.module.css';
 
 const KetoDiet = () => {
   const items: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
