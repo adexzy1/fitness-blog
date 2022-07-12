@@ -1,3 +1,12 @@
 .container {
   padding-inline: var(--outter-padding);
+  margin-top: 5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 3rem;
+  }
 }

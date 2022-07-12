@@ -1,0 +1,14 @@
+.container {
+  margin-top: 5rem;
+  padding-inline: var(--outter-padding);
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 3rem;
+  }
+}

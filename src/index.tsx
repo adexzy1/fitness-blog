@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { ApolloProvider, InMemoryCache, ApolloClient } from '@apollo/client';
+import ScrollToTop from './components/scrollToTop/ScrollToTop';
 
 const client = new ApolloClient({
   uri: 'https://api-us-west-2.graphcms.com/v2/cl55cz87u3f3m01upe6fyh5kn/master',
@@ -17,6 +18,7 @@ root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <BrowserRouter>
+        <ScrollToTop />
         <App />
       </BrowserRouter>
     </ApolloProvider>

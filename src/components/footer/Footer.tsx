@@ -60,9 +60,9 @@ const Footer = () => {
         <div className={style.footer__quick_links}>
           <h5>Categories</h5>
           <ul>
-            <NavItem text="About Us" link="/" />
-            <NavItem text="Support" link="/" />
-            <NavItem text="Contact" link="/" />
+            <NavItem text="Fitness" link="/fitness" />
+            <NavItem text="Nutrition" link="/nutrition" />
+            <NavItem text="Keto Diet" link="/" />
           </ul>
         </div>
       </section>

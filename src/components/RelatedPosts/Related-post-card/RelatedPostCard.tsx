@@ -3,7 +3,7 @@ import style from './relatedPostCard.module.css';
 
 const RelatedPostCard = () => {
   return (
-    <Link to={'/'} className={style.container}>
+    <Link to={'/1'} className={style.container}>
       <h5>THE LIVING EMOJI</h5>
 
       <div className={style.details}>

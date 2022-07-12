@@ -41,4 +41,8 @@
   .navlink > a:hover::before {
     transform: scaleX(1);
   }
+
+  .active__link > a {
+    background-color: transparent;
+  }
 }

@@ -3,23 +3,8 @@
   padding-block: 5rem;
 }
 
-.post__list {
-  display: grid;
-  gap: 3rem;
-}
-
 @media screen and (min-width: 768px) {
   .container {
     padding-top: 15rem;
-  }
-
-  .post__list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  .post__list {
-    grid-template-columns: repeat(3, 1fr);
   }
 }

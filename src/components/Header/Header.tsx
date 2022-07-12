@@ -2,13 +2,14 @@ import React from 'react';
 import Navbar from './navbar/Navbar';
 import logo from '../../assets/logo.png';
 import style from './header.module.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <div className={style.header__container}>
-      <section className={style.logo__wrapper}>
+      <Link to={'/'} className={style.logo__wrapper}>
         <img src={logo} alt="logo" />
-      </section>
+      </Link>
 
       <Navbar />
     </div>

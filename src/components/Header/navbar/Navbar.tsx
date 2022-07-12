@@ -22,9 +22,9 @@ const Navbar = () => {
         }`}
       >
         <NavItem link={'/'} text={'HOME'} />
-        <NavItem link={'/c'} text={'TECH'} />
-        <NavItem link={'/p'} text={'CONTACT'} />
-        <NavItem link={'/a'} text={'ABOUT US'} />
+        <NavItem link={'/fitness'} text={'FITNESS'} />
+        <NavItem link={'/nutrition'} text={'NUTRITION'} />
+        <NavItem link={'/keto-diet'} text={'KETO DIET'} />
       </ul>
     </nav>
   );
