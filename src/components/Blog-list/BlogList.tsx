@@ -1,16 +1,16 @@
-import React from 'react';
+import { Post } from '../../models/models';
 import PostCard from '../PostCard/PostCard';
 import style from './blogList.module.css';
 
 interface Props {
-  data: number[];
+  data: Post[];
 }
 
 const BlogList = ({ data }: Props) => {
   return (
     <main className={style.blog__list__wrapper}>
-      {data.map((ittem, index) => (
-        <PostCard key={index} />
+      {data.map((item) => (
+        <PostCard key={item.id} item={item} />
       ))}
     </main>
   );

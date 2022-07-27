@@ -1,17 +1,17 @@
-import BlogList from '../../../components/Blog-list/BlogList';
 import RelatedPosts from '../../../components/RelatedPosts/RelatedPosts';
+import useGetPosts from '../../../queries/getPosts';
+import RenderBlogList from '../../../components/utils/RenderBlogList';
 import style from '../categories.module.css';
 
 const Nutrition = () => {
-  const items: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const { data, loading, error } = useGetPosts(['Nutrition'], 10);
 
   return (
     <section className={style.container}>
-      <BlogList data={items} />
-
-      <aside>
+      <>{RenderBlogList({ data, loading, error })}</>
+      {/* <aside>
         <RelatedPosts />
-      </aside>
+      </aside> */}
     </section>
   );
 };

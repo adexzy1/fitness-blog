@@ -1,28 +1,39 @@
 import Button from '../../button/Button';
-import featured from '../../../assets/featured.png';
 import style from './featuredBigCard.module.css';
+import { Post } from '../../../models/models';
+import useExcerpt from '../../../hooks/useExcerpt';
+import { useNavigate } from 'react-router-dom';
 
-const FeaturedBigCard = () => {
+interface Props {
+  item: Post;
+}
+
+const FeaturedBigCard = ({ item }: Props) => {
+  // raect-router hooks
+  const navigate = useNavigate();
+  // custom hook
+
+  const excerpt = useExcerpt(item?.content.text, 274);
+  const subHeading = useExcerpt(item?.content.text, 15);
+
+  const handleClick = () => {
+    navigate(`/${item.slug}`);
+  };
+
   return (
     <section className={style.big__featured__wrapper}>
-      <div className={style.big__feauted__details}>
-        <div>
-          <h1>4 WEEK</h1>
-          <h4>WORKOUT PLAN</h4>
-        </div>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-          fringilla, lacus eget consequat tincidunt, lectus ex bibendum libero,
-          eget iaculis quam arcu quis mauris. Donec ex neque, egestas in
-          faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Maecenas
-        </p>
-        <Button text={'Read More'} />
+      <div className={style.big__featured__imgWrapper}>
+        <img src={item.coverPhoto.url} alt="featured" />
       </div>
 
-      <div className={style.big__featured__imgWrapper}>
-        <img src={featured} alt="featured" />
+      <div className={style.big__feauted__details}>
+        <div>
+          <h1>{item.category[0]}</h1>
+          <h4>{subHeading}</h4>
+        </div>
+
+        <p>{excerpt}...</p>
+        <Button text={'Read More'} handleClick={handleClick} />
       </div>
     </section>
   );

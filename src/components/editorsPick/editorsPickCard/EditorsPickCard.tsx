@@ -1,24 +1,36 @@
 import Button from '../../button/Button';
-import editorsImg from '../../../assets/editors-pick-img.png';
 import style from './editorsPickCard.module.css';
+import { Post } from '../../../models/models';
+import useExcerpt from '../../../hooks/useExcerpt';
+import { useNavigate } from 'react-router-dom';
 
-const EditorsPickCard = () => {
+interface Props {
+  item: Post;
+}
+
+const EditorsPickCard = ({ item }: Props) => {
+  // react router hook
+  const navigate = useNavigate();
+  // custom hook
+  const excerpt = useExcerpt(item?.content.text, 148);
+
+  // handle click
+  const handleClick = () => {
+    navigate(`/${item.slug}`);
+  };
+
   return (
     <section className={style.container}>
       <div className={style.img__wrapper}>
-        <img src={editorsImg} alt="post-img" />
+        <img src={item.coverPhoto.url} alt="post-img" />
       </div>
 
       <div className={style.details__container}>
-        <h5>THE BEST FOODS TO REFUEL WITH AFTER A HIIT WORKOUT</h5>
+        <h5>{item.title.toUpperCase()}</h5>
 
-        <p>
-          With benefits such as weight loss, improved stamina and endurance, and
-          stronger muscles, it&apos;s no surprise that HIIT workouts are so in
-          demand.
-        </p>
+        <p>{excerpt}</p>
 
-        <Button text="Read More" />
+        <Button text="Read More" handleClick={handleClick} />
       </div>
     </section>
   );

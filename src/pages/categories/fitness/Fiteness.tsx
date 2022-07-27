@@ -1,17 +1,18 @@
-import BlogList from '../../../components/Blog-list/BlogList';
 import RelatedPosts from '../../../components/RelatedPosts/RelatedPosts';
 import style from '../categories.module.css';
+import useGetPosts from '../../../queries/getPosts';
+import RenderBlogList from '../../../components/utils/RenderBlogList';
 
 const Fiteness = () => {
-  const items: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const { data, loading, error } = useGetPosts(['Fitness'], 10);
 
   return (
     <section className={style.container}>
-      <BlogList data={items} />
+      <>{RenderBlogList({ data, loading, error })}</>
 
-      <aside>
+      {/* <aside>
         <RelatedPosts />
-      </aside>
+      </aside> */}
     </section>
   );
 };
