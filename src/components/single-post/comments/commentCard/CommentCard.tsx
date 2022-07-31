@@ -9,28 +9,35 @@ import { Comments } from '../../../../models/models';
 interface Props {
   commentName: string;
   commentMessage: string;
+  id: string;
+  replies: Comments[];
 }
 
-const CommentCard = ({ commentName, commentMessage }: Props) => {
+const CommentCard = ({ commentName, commentMessage, id, replies }: Props) => {
   const [showReplyBox, setShowReplyBox] = useState<boolean>(false);
-  const [reply, setReply] = useState<Comments>({
-    name: '',
-    message: '',
-  });
-  const [totalReply, setTotalReply] = useState<Comments[]>([]);
+  const [replyName, setReplyName] = useState<string>('');
+  const [replyMessage, setReplyMessage] = useState<string>('');
   const [likeCount, setLikeCount] = useState<number>(0);
+
+  console.log(replies);
 
   const handleReplyBox = () => {
     setShowReplyBox((prev) => !prev);
   };
 
   const handleTotalReply = () => {
-    if (reply) {
-      setTotalReply([{ ...reply }, ...totalReply]);
-      setReply({
-        name: '',
-        message: '',
+    if (replyName && replyMessage) {
+      // push the new reply if the comment key exist
+      replies.push({
+        name: replyName,
+        message: replyMessage,
+        id: Date.now().toString(),
+        comment_replies: [],
       });
+
+      // clear the reply input box
+      setReplyName('');
+      setReplyMessage('');
     }
     setShowReplyBox(false);
   };
@@ -68,13 +75,15 @@ const CommentCard = ({ commentName, commentMessage }: Props) => {
           </section>
         </section>
 
-        {totalReply.length > 0 && (
+        {replies && (
           <div className={style.comment_reply_wrapper}>
-            {totalReply.map((item, index) => (
+            {replies.map((item) => (
               <CommentCard
-                key={index}
+                key={item.id}
                 commentName={item.name}
                 commentMessage={item.message}
+                id={item.id}
+                replies={item.comment_replies}
               />
             ))}
           </div>
@@ -87,8 +96,10 @@ const CommentCard = ({ commentName, commentMessage }: Props) => {
           btnText="Reply"
           cancelText="Cancel"
           handleReplyBox={handleReplyBox}
-          comment={reply}
-          setComment={setReply}
+          name={replyName}
+          message={replyMessage}
+          setMessage={setReplyMessage}
+          setName={setReplyName}
           handleComment={handleTotalReply}
         />
       )}

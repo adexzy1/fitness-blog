@@ -9,7 +9,9 @@ const PageRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+
       <Route path=":slug" element={<SinglePostPage />} />
+
       <Route path="/fitness" element={<Fiteness />} />
       <Route path="/nutrition" element={<Nutrition />} />
       <Route path="/keto-diet" element={<KetoDiet />} />

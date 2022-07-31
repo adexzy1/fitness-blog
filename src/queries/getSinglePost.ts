@@ -5,6 +5,10 @@ const GET_SINGLE_POST = gql`
     post(where: { slug: $slug }) {
       id
       title
+      createdAt
+      slug
+      category
+
       content {
         html
       }
@@ -19,9 +23,17 @@ const GET_SINGLE_POST = gql`
           url
         }
       }
-      createdAt
-      slug
-      category
+
+      comments {
+        message
+        name
+        id
+        commentReplies {
+          id
+          message
+          name
+        }
+      }
     }
   }
 `;

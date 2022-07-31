@@ -23,8 +23,6 @@ const RelatedPosts = ({ category, id }: Props) => {
     }
   }, [data, id]);
 
-  console.log(relatedPosts);
-
   return (
     <aside className={style.container}>
       <h4>Related Posts</h4>

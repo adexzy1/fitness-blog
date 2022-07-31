@@ -1,5 +1,4 @@
 import { FormEvent } from 'react';
-import { Comments } from '../../../../models/models';
 import Button from '../../../button/Button';
 import style from './commentBox.module.css';
 
@@ -7,27 +6,33 @@ interface Props {
   btnText: string;
   cancelText?: string;
   handleReplyBox?: () => void;
-  comment: Comments;
-  setComment: React.Dispatch<React.SetStateAction<Comments>>;
+  name: string;
+  message: string;
+  setName: React.Dispatch<React.SetStateAction<string>>;
+  setMessage: React.Dispatch<React.SetStateAction<string>>;
   handleComment: () => void;
 }
 
 const CommentBox = (props: Props) => {
-  // pdestructured props
+  // destructured props
   const {
     btnText,
     cancelText,
     handleReplyBox,
-    comment,
-    setComment,
+    name,
+    message,
+    setName,
+    setMessage,
     handleComment,
   } = props;
 
-  // change the button state when the comment box state changes
-  const disableBtn = comment ? false : true;
+  // disable button if name and message field is empty
+  const disAbled = name && message ? false : true;
 
+  // function to submit comment
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+
     handleComment();
   };
 
@@ -35,19 +40,19 @@ const CommentBox = (props: Props) => {
     <form className={style.commentBox__container} onSubmit={handleSubmit}>
       <input
         type="text"
-        value={comment.name}
         placeholder="Enter your name"
         required
-        onChange={(e) => setComment({ ...comment, name: e.target.value })}
+        value={name}
+        onChange={(e) => setName(e.target.value)}
       />
 
       <textarea
         rows={10}
-        onChange={(e) => setComment({ ...comment, message: e.target.value })}
-        value={comment.message}
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
       />
 
-      <Button text={btnText} disable={disableBtn} />
+      <Button text={btnText} disable={disAbled} />
 
       {cancelText && (
         <button

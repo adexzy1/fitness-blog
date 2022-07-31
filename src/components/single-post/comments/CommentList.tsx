@@ -6,40 +6,38 @@ import style from './commentList.module.css';
 
 const CommentList = () => {
   // state
-  const [comment, setComment] = useState<Comments>({
-    name: '',
-    message: '',
-  });
+  const [name, setName] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
   const [totalComments, setTotalComments] = useState<Comments[]>([]);
-  const commentCount = totalComments.length;
 
   const handleTotalComments = () => {
-    if (comment) {
-      setTotalComments([{ ...comment }, ...totalComments]);
-    }
-    setComment({
-      name: '',
-      message: '',
-    });
+    setTotalComments([
+      { name, message, id: Date.now().toString(), comment_replies: [] },
+      ...totalComments,
+    ]);
   };
 
   return (
     <section className={style.comment__container}>
-      <h5>Comment ({commentCount})</h5>
+      <h5>Comment ({totalComments.length})</h5>
       <CommentBox
         btnText="Submit"
-        comment={comment}
-        setComment={setComment}
+        name={name}
+        message={message}
+        setName={setName}
+        setMessage={setMessage}
         handleComment={handleTotalComments}
       />
 
       {totalComments.length > 0 && (
         <>
-          {totalComments.map((item, index) => (
+          {totalComments.map((item) => (
             <CommentCard
-              key={index}
+              key={item.id}
               commentName={item.name}
               commentMessage={item.message}
+              id={item.id}
+              replies={item.comment_replies}
             />
           ))}
         </>

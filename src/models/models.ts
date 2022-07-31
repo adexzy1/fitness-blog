@@ -1,12 +1,14 @@
 export interface Comments {
   name: string;
   message: string;
+  id: string;
+  comment_replies: Comments[];
 }
 
 export interface Post {
   author: { displayPicture: { url: string }; name: string };
   category: string;
-  content: { text: string };
+  content: { text: string; html: string };
   coverPhoto: { url: string };
   createdAt: string;
   slug: string;
