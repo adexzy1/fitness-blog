@@ -1,0 +1,90 @@
+.skeleton {
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: rgba(51, 47, 60, 0.5);
+  }
+  100% {
+    background-color: rgba(51, 47, 60, 1);
+  }
+}
+
+.title {
+  height: 1.5rem;
+}
+
+.text {
+  height: 0.5rem;
+}
+
+.image {
+  height: 25rem;
+  border-radius: 1rem;
+}
+
+.button {
+  padding: 1.2rem 1.5rem;
+  width: 11.4rem;
+  height: 4rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}
+
+.name {
+  height: 1rem;
+  width: 10rem;
+}
+
+.cover_photo {
+  height: 50vh;
+  margin-bottom: 3rem;
+}
+
+.author_img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+}
+
+/* post card section */
+.post__card_skeleton .image {
+  margin-bottom: 2rem;
+}
+
+.post__card_skeleton .title {
+  margin-bottom: 1.5rem;
+}
+.post__card_skeleton .button {
+  margin-top: 2rem;
+}
+
+.post__card_skeleton :nth-child(5) {
+  width: 80%;
+}
+
+/* related post section */
+.related_post {
+  background-color: rgba(51, 47, 60, 0.45);
+  margin-top: 0.2rem;
+  padding: 1rem;
+}
+
+/* single post */
+
+.single__post_text_wrapper {
+  margin-top: 3rem;
+}
+
+.single__post_text_wrapper :last-child {
+  width: 70%;
+}
+
+.single__post_author_details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

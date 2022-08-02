@@ -1,7 +1,7 @@
 import CategoryHeader from '../category header/CategoryHeader';
 import style from './latestPostList.module.css';
 import useGetLatestPosts from '../../queries/GetLatestPosts';
-import RenderBlogList from '../utils/RenderBlogList';
+import BlogList from '../Blog-list/BlogList';
 
 const LatestPostList = () => {
   const { error, loading, data } = useGetLatestPosts();
@@ -10,7 +10,12 @@ const LatestPostList = () => {
     <section className={style.container}>
       <CategoryHeader title="Latest Posts" />
 
-      <>{RenderBlogList({ data, loading, error })}</>
+      <BlogList
+        data={data?.posts}
+        loading={loading}
+        error={error}
+        skeletonNumber={3}
+      />
     </section>
   );
 };

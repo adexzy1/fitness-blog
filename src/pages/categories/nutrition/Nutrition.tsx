@@ -1,13 +1,18 @@
 import useGetPosts from '../../../queries/getPosts';
-import RenderBlogList from '../../../components/utils/RenderBlogList';
 import style from '../categories.module.css';
+import BlogList from '../../../components/Blog-list/BlogList';
 
 const Nutrition = () => {
   const { data, loading, error } = useGetPosts(['Nutrition'], 10);
 
   return (
     <section className={style.container}>
-      {RenderBlogList({ data, loading, error })}
+      <BlogList
+        data={data?.posts}
+        loading={loading}
+        error={error}
+        skeletonNumber={5}
+      />
     </section>
   );
 };

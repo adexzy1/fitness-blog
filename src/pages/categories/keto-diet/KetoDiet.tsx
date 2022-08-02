@@ -1,18 +1,18 @@
-import RelatedPosts from '../../../components/RelatedPosts/RelatedPosts';
 import useGetPosts from '../../../queries/getPosts';
-import RenderBlogList from '../../../components/utils/RenderBlogList';
 import style from '../categories.module.css';
+import BlogList from '../../../components/Blog-list/BlogList';
 
 const KetoDiet = () => {
   const { data, loading, error } = useGetPosts(['KetoDiet'], 10);
 
   return (
     <section className={style.container}>
-      <>{RenderBlogList({ data, loading, error })}</>
-
-      {/* <aside>
-        <RelatedPosts />
-      </aside> */}
+      <BlogList
+        data={data?.posts}
+        loading={loading}
+        error={error}
+        skeletonNumber={5}
+      />
     </section>
   );
 };
