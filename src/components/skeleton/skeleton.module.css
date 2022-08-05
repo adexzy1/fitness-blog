@@ -50,6 +50,11 @@
   border-radius: 100%;
 }
 
+.featured_title {
+  height: 5rem;
+  width: 15rem;
+}
+
 /* post card section */
 .post__card_skeleton .image {
   margin-bottom: 2rem;
@@ -87,4 +92,19 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+/* editors pick */
+.editors__pick {
+  background-color: rgba(51, 47, 60, 0.3);
+}
+
+.editors__pick_details {
+  padding-inline: 1rem;
+  padding-block: 1rem;
+}
+
+.editors__pick_text_container {
+  padding-inline: 4rem;
+  padding-block: 1rem;
 }

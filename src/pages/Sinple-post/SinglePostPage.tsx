@@ -4,6 +4,7 @@ import useGetSinglePost from '../../queries/getSinglePost';
 import style from './singlePostPage.module.css';
 import { useParams } from 'react-router-dom';
 import SinglePostSkeleton from '../../components/skeleton/singlePost/SinglePostSkeleton';
+import TabTitle from '../../utils/TabTitle';
 
 const SinglePostPage = () => {
   // React-router hook
@@ -11,6 +12,13 @@ const SinglePostPage = () => {
 
   // GraphQl Query hook
   const { loading, data, error } = useGetSinglePost(slug!);
+
+  // function to set page title
+  TabTitle(
+    ` ${
+      data?.post.title ? data?.post.title : 'WorkOut &'
+    } - believe in yourself`
+  );
 
   return (
     <section className={style.container}>

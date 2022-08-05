@@ -3,6 +3,7 @@ import style from './featuredBigCard.module.css';
 import { Post } from '../../../models/models';
 import useExcerpt from '../../../hooks/useExcerpt';
 import { useNavigate } from 'react-router-dom';
+import Skeleton from '../../skeleton/Skeleton';
 
 interface Props {
   item: Post;
