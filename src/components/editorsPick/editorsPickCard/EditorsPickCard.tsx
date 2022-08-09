@@ -11,8 +11,9 @@ interface Props {
 const EditorsPickCard = ({ item }: Props) => {
   // react router hook
   const navigate = useNavigate();
+
   // custom hook
-  const excerpt = useExcerpt(item?.content.text, 148);
+  const excerpt = useExcerpt(item?.content.text, 130);
 
   // handle click
   const handleClick = () => {
