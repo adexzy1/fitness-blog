@@ -1,7 +1,7 @@
 export interface Comments {
   name: string;
   message: string;
-  id: string;
+  date: string;
   comment_replies: Comments[];
 }
 

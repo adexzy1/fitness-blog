@@ -17,7 +17,7 @@ const SinglePostSkeleton = () => {
       </section>
 
       {textSkeleton.map((n) => (
-        <section className={style.single__post_text_wrapper}>
+        <section key={n} className={style.single__post_text_wrapper}>
           <Skeleton type="text" />
           <Skeleton type="text" />
           <Skeleton type="text" />

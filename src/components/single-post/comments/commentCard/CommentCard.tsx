@@ -5,21 +5,23 @@ import { ImBubble } from 'react-icons/im';
 import { useState } from 'react';
 import CommentBox from '../commentBox/CommentBox';
 import { Comments } from '../../../../models/models';
+import useTimeAgo from '../../../../hooks/useTimeAgo';
 
 interface Props {
   commentName: string;
   commentMessage: string;
-  id: string;
+  date: string;
   replies: Comments[];
 }
 
-const CommentCard = ({ commentName, commentMessage, id, replies }: Props) => {
+const CommentCard = ({ commentName, commentMessage, date, replies }: Props) => {
   const [showReplyBox, setShowReplyBox] = useState<boolean>(false);
   const [replyName, setReplyName] = useState<string>('');
   const [replyMessage, setReplyMessage] = useState<string>('');
   const [likeCount, setLikeCount] = useState<number>(0);
 
-  console.log(replies);
+  // custom hook
+  const timeAgo = useTimeAgo(date);
 
   const handleReplyBox = () => {
     setShowReplyBox((prev) => !prev);
@@ -31,7 +33,7 @@ const CommentCard = ({ commentName, commentMessage, id, replies }: Props) => {
       replies.push({
         name: replyName,
         message: replyMessage,
-        id: Date.now().toString(),
+        date: new Date().toISOString(),
         comment_replies: [],
       });
 
@@ -58,7 +60,7 @@ const CommentCard = ({ commentName, commentMessage, id, replies }: Props) => {
             <div className={style.comment__body}>
               <p>
                 {commentName}
-                <span>Jul4</span>
+                <span>{timeAgo}</span>
               </p>
               <p>{commentMessage}</p>
             </div>
@@ -77,12 +79,12 @@ const CommentCard = ({ commentName, commentMessage, id, replies }: Props) => {
 
         {replies && (
           <div className={style.comment_reply_wrapper}>
-            {replies.map((item) => (
+            {replies.map((item, index) => (
               <CommentCard
-                key={item.id}
+                key={index}
                 commentName={item.name}
                 commentMessage={item.message}
-                id={item.id}
+                date={item.date}
                 replies={item.comment_replies}
               />
             ))}

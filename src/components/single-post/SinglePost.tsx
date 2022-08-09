@@ -9,8 +9,9 @@ interface Props {
 
 const SinglePost = ({ post }: Props) => {
   // custom hook
-  const { timeAgo } = useTimeAgo(post.createdAt);
+  const timeAgo = useTimeAgo(post.createdAt);
 
+  console.log(post.createdAt);
   return (
     <section className={style.container}>
       <div className={style.img__wrapper}>
@@ -24,7 +25,7 @@ const SinglePost = ({ post }: Props) => {
 
         <div>
           <h5>{post.author.name}</h5>
-          <p>Published {timeAgo()} Ago</p>
+          <p>Published {timeAgo} Ago</p>
         </div>
       </div>
 

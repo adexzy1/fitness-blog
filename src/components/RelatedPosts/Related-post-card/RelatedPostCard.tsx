@@ -9,7 +9,7 @@ interface Props {
 
 const RelatedPostCard = ({ item }: Props) => {
   // custom hook
-  const { timeAgo } = useTimeAgo(item?.createdAt);
+  const timeAgo = useTimeAgo(item?.createdAt);
 
   return (
     <Link to={`/${item.slug}`} className={style.container}>
@@ -18,7 +18,7 @@ const RelatedPostCard = ({ item }: Props) => {
       <div className={style.details}>
         <div>
           <h5>{item.author.name}</h5>
-          <p>{timeAgo()}</p>
+          <p>{timeAgo}</p>
         </div>
       </div>
     </Link>

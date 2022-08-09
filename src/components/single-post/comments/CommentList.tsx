@@ -12,9 +12,11 @@ const CommentList = () => {
 
   const handleTotalComments = () => {
     setTotalComments([
-      { name, message, id: Date.now().toString(), comment_replies: [] },
+      { name, message, date: new Date().toISOString(), comment_replies: [] },
       ...totalComments,
     ]);
+    setName('');
+    setMessage('');
   };
 
   return (
@@ -31,12 +33,12 @@ const CommentList = () => {
 
       {totalComments.length > 0 && (
         <>
-          {totalComments.map((item) => (
+          {totalComments.map((item, index) => (
             <CommentCard
-              key={item.id}
+              key={index}
               commentName={item.name}
               commentMessage={item.message}
-              id={item.id}
+              date={item.date}
               replies={item.comment_replies}
             />
           ))}

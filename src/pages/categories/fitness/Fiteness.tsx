@@ -9,14 +9,14 @@ const Fiteness = () => {
   TabTitle('Fitness - WorkOut & believe in yourself');
 
   return (
-    <section className={style.container}>
+    <main className={style.container}>
       <BlogList
         data={data?.posts}
         loading={loading}
         error={error}
         skeletonNumber={5}
       />
-    </section>
+    </main>
   );
 };
 
